@@ -4,7 +4,7 @@ var PL = function() {
   this.sound = null;
 };
 
-PL.prototype.play = function(_id, url) {
+PL.prototype.play = function(url, _id) {
   var self = this;
 
   // playing _id
@@ -49,7 +49,7 @@ PL.prototype.pause = function() {
 PL.prototype.isPlayed = function(_id) {
   this._dep.depend();
   if (this.sound) {
-    return _.isEqual(this._id, _id);
+    return _id ? _.isEqual(this._id, _id) : true;
   }
   return false;
 };
@@ -79,20 +79,6 @@ PL.prototype.getTime = function() {
 };
 
 Player = new PL();
-
-Template.player.events({
-  'click .play': function() {
-    Player.play(this._id, this.url());
-  },
-
-  'click .stop': function() {
-    Player.stop();
-  },
-
-  'click .pause': function() {
-    Player.pause();
-  }
-});
 
 Template.registerHelper('player', function() {
   return Player;

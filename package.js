@@ -22,7 +22,7 @@ Package.onUse(function(api) {
     'lib/buzz.js',
 
     // sound player tracker depend
-    'player.html', 'player.js'], 'client');
+    'player.js'], 'client');
 
   api.export(['Player']);
 });

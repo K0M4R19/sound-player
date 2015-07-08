@@ -1,0 +1,22 @@
+<head>
+  <title>example</title>
+</head>
+
+<body>
+  {{> player }}
+</body>
+
+<template name="player">
+  {{# if player.isPlayed }}
+    {{# if player.isPaused }}
+      <div class="play">play</div>
+    {{ else }}
+      <div class="pause">pause</div>
+    {{/if}}
+    <div class="stop">stop</div>
+    {{ player.getTime }}
+    <div style="position:absolute; top:0px; height:5px; background-color:red; width:{{ player.getPercent }}%"></div>
+  {{ else }}
+    <div class="play">play</div>
+  {{/if}}
+</template>
