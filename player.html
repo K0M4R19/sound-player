@@ -1,0 +1,12 @@
+<template name="player">
+  {{# unless player.isPlayed _id }}
+    <div class="play">play</div>
+  {{/unless}}
+
+  {{# if player.isPlayed _id }}
+    <div class="pause">pause</div>
+    <div class="stop">stop</div>
+    {{ player.getTime }}
+    <div style="position:absolute; bottom:0px; height:100%; background-color:rgba(0, 0, 0, 0.09); width:{{ player.getPercent }}%"></div>
+  {{/if}}
+</template>
