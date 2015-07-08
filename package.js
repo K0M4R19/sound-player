@@ -1,8 +1,8 @@
 Package.describe({
   name: 'fileer:sound-player',
   version: '0.0.1',
-  summary: '',
-  git: '',
+  summary: 'A Javascript HTML5 Audio reactivity library.',
+  git: 'https://github.com/fileer/sound-player.git',
   documentation: 'README.md'
 });
 
