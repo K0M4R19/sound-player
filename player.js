@@ -2,9 +2,12 @@ var PL = function() {
   this._dep = new Tracker.Dependency();
   this._id = null;
   this.sound = null;
+
+  // buzz Object
+  this.buzz = buzz;
 };
 
-PL.prototype.play = function(url, _id) {
+PL.prototype.play = function(url, _id, endedCall) {
   var self = this;
 
   // playing _id
@@ -22,6 +25,10 @@ PL.prototype.play = function(url, _id) {
   });
 
   this.sound.bind("ended", function(e) {
+    if (endedCall) {
+      return endedCall(self);
+    }
+
     self._id = null;
     self.sound = null;
 
@@ -76,6 +83,16 @@ PL.prototype.getTime = function() {
   if (this.sound) {
     return buzz.toTimer(this.sound.getTime());
   }
+};
+
+PL.prototype.get = function(prop) {
+  this._dep.depend();
+  return this[prop];
+};
+
+PL.prototype.set = function(key, val) {
+  this[key] = val;
+  this._dep.changed();
 };
 
 Player = new PL();
