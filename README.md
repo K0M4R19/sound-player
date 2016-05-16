@@ -1,1 +1,1 @@
-### A Javascript HTML5 Audio reactivity library 
+### A Javascript HTML5 Audio reactivity library with volume gestion
