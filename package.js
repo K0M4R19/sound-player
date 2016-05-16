@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'k0m4r19:sound-player',
+  name: 'k0m4r:sound-player',
   version: '0.0.3',
   summary: 'A Javascript HTML5 Audio reactivity library with volume gestion',
   git: 'https://github.com/K0M4R19/sound-player.git',
