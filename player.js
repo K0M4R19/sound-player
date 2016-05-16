@@ -53,6 +53,20 @@ PL.prototype.pause = function() {
   }
 };
 
+PL.prototype.increaseVolume = function() {
+  if (this.sound) {
+    this.sound.increaseVolume();
+    this._dep.changed();
+  }
+};
+
+PL.prototype.decreaseVolume = function() {
+  if (this.sound) {
+    this.sound.decreaseVolume();
+    this._dep.changed();
+  }
+};
+
 PL.prototype.isPlayed = function(_id) {
   this._dep.depend();
   if (this.sound) {
